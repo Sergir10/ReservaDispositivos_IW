@@ -66,6 +66,9 @@ public class Usuario implements Serializable{
 	private String celular;
 	
 	
+	public Usuario() {
+	}
+	
 	/**
 	 * Metodos accesores para los atributos definidos anteriormente.
 	 */

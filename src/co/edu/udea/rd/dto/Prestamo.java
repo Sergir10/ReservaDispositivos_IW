@@ -27,19 +27,15 @@ public class Prestamo implements Serializable{
 	private Date fechaSolicitud;
 	
 	/**
-	 * Fecha en la que se realizara el prestamo.
+	 * Fecha y hora en la que se realizara el prestamo.
 	 */
-	private Date fechaPrestamo;
+	private Date fechaInicialPrestamo;
 	
 	/**
-	 * Hora inicial en que se realizara el prestamo.
+	 * Fecha y hora en la que se termina el prestamo.
 	 */
-	private Time horaInicialPrestamo;
+	private Date fechaFinalPrestamo;
 	
-	/**
-	 * Hora limite para devolver el prestamo.
-	 */
-	private Time horaFinalPrestamo;
 	
 	/**
 	 * Metodos accesores para los atributos definidos previamente.
@@ -58,22 +54,16 @@ public class Prestamo implements Serializable{
 		this.fechaSolicitud = fechaSolicitud;
 	}
 	public Date getFechaPrestamo() {
-		return fechaPrestamo;
+		return fechaInicialPrestamo;
 	}
 	public void setFechaPrestamo(Date fechaPrestamo) {
-		this.fechaPrestamo = fechaPrestamo;
+		this.fechaInicialPrestamo = fechaPrestamo;
 	}
-	public Time getHoraInicialPrestamo() {
-		return horaInicialPrestamo;
+	public Date getFechaFinalPrestamo() {
+		return fechaFinalPrestamo;
 	}
-	public void setHoraInicialPrestamo(Time horaInicialPrestamo) {
-		this.horaInicialPrestamo = horaInicialPrestamo;
-	}
-	public Time getHoraFinalPrestamo() {
-		return horaFinalPrestamo;
-	}
-	public void setHoraFinalPrestamo(Time horaFinalPrestamo) {
-		this.horaFinalPrestamo = horaFinalPrestamo;
+	public void setFechaFinalPrestamo(Date fechaFinalPrestamo) {
+		this.fechaFinalPrestamo = fechaFinalPrestamo;
 	}
 	
 	
