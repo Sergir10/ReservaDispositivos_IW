@@ -42,7 +42,7 @@ public class UsuarioDAOImplTest {
 		try {
 			daoUsuario.crearUsuario(usuario);
 			assertTrue(true);
-		} catch (MyException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

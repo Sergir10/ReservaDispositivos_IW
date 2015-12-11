@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 10/12/2015 02:31:02 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="co.edu.udea.rd.dto.TipoDispositivo" table="TIPODISPOSITIVO">
-        <id name="idTipoDispositivo" type="int">
-            <column name="IDTIPODISPOSITIVO" />
-            <generator class="assigned" />
-        </id>
-        <property name="tipoDispositivo" type="java.lang.String">
-            <column name="TIPODISPOSITIVO" length="45" not-null="true"/>
-        </property>
-        <property name="descripcion" type="java.lang.String">
-            <column name="DESCRIPCION" length="45" not-null="true"/>
-        </property>
-    </class>
+	<class name="co.edu.udea.rd.dto.TipoDispositivo" table="TIPODISPOSITIVO">
+		<id name="idTipoDispositivo" type="java.lang.Integer">
+			<column name="IDTIPODISPOSITIVO" precision="11" scale="0" />
+			<generator class="assigned" />
+		</id>
+		<property name="tipoDispositivo" type="java.lang.String">
+			<column name="TIPODISPOSITIVO" length="45" not-null="true" />
+		</property>
+		<property name="descripcion" type="java.lang.String">
+			<column name="DESCRIPCION" length="45" not-null="true" />
+		</property>
+	</class>
 </hibernate-mapping>

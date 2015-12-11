@@ -20,11 +20,10 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mappingResources">
 			<list>
-				<value>co/edu/udea/rd/dao/mapping/Dispositivo.hbm.xml</value>
-				<value>co/edu/udea/rd/dao/mapping/Prestamo.hbm.xml</value>
-				<value>co/edu/udea/rd/dao/mapping/PrestamoId.hbm.xml</value>
-				<value>co/edu/udea/rd/dao/mapping/Rol.hbm.xml</value>
-				<value>co/edu/udea/rd/dao/mapping/TipoDispositivo.hbm.xml</value>
+<!-- 				<value>co/edu/udea/rd/dao/mapping/Dispositivo.hbm.xml</value> -->
+<!-- 				<value>co/edu/udea/rd/dao/mapping/Prestamo.hbm.xml</value> -->
+			<value>co/edu/udea/rd/dao/mapping/Rol.hbm.xml</value> 
+<!-- 				<value>co/edu/udea/rd/dao/mapping/TipoDispositivo.hbm.xml</value> -->
 				<value>co/edu/udea/rd/dao/mapping/Usuario.hbm.xml</value>
 			</list>
 		</property>
@@ -46,14 +45,5 @@
 	<bean id="UsuarioDAO" class="co.edu.udea.rd.dao.impl.UsuarioDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
-	<!-- Inyectar dao de usuario en la clase UsuarioBL -->
-<!-- 	<bean id="UsuarioBL" class="co.edu.udea.iw.bl.impl.UsuarioBLImpl"> -->
-<!-- 		<property name="daoU" ref="UsuarioDAO"></property> -->
-<!-- 	</bean> -->
-	<!-- Inyectar dao de cliente en la clase ClienteBL -->
-<!-- 	<bean id="ClienteBL" class="co.edu.udea.iw.bl.impl.ClienteBLImpl"> -->
-<!-- 		<property name="daoC" ref="ClienteDAO"></property> -->
-<!-- 		<property name="daoU" ref="UsuarioDAO"></property> -->
-<!-- 	</bean> -->
+	
 </beans>
