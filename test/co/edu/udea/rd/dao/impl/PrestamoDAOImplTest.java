@@ -66,7 +66,6 @@ public class PrestamoDAOImplTest {
 
 			assertTrue(true);
 		} catch (MyException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -109,7 +108,6 @@ public class PrestamoDAOImplTest {
 		} catch (MyException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
