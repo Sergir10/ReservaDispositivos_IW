@@ -53,10 +53,10 @@ public class Prestamo implements Serializable{
 	public void setFechaSolicitud(Date fechaSolicitud) {
 		this.fechaSolicitud = fechaSolicitud;
 	}
-	public Date getFechaPrestamo() {
+	public Date getFechaInicialPrestamo() {
 		return fechaInicialPrestamo;
 	}
-	public void setFechaPrestamo(Date fechaPrestamo) {
+	public void setFechaInicialPrestamo(Date fechaPrestamo) {
 		this.fechaInicialPrestamo = fechaPrestamo;
 	}
 	public Date getFechaFinalPrestamo() {

@@ -24,7 +24,7 @@ public class UsuarioDAOImplTest {
 	UsuarioDAOImpl daoUsuario;
 
 	@Test
-	public void testCrearUsuario() {
+	public void test1CrearUsuario() {
 		Usuario usuario = new Usuario();
 		usuario.setUsername("hackerman");
 		usuario.setPassword("123");
@@ -36,7 +36,6 @@ public class UsuarioDAOImplTest {
 
 		Rol rol = new Rol();
 		rol.setIdRol(1);
-		rol.setTipoRol("Administrador");
 
 		usuario.setRol(rol);
 		try {
@@ -50,18 +49,40 @@ public class UsuarioDAOImplTest {
 	}
 
 	@Test
-	public void testModificarUsuario() {
-		fail("Not yet implemented");
+	public void test2ObtenerUsuario() {
+		Usuario usuario = null;
+		try {
+			usuario = daoUsuario.obtenerUsuario("hackerman");
+			assertTrue(usuario != null);
+		} catch (MyException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
-	public void testEliminar() {
-		fail("Not yet implemented");
+	public void test3ModificarUsuario() {
+		Usuario usuario = null;
+		try {
+			usuario = daoUsuario.obtenerUsuario("hackerman");
+			usuario.setPassword("hackthis123");
+			daoUsuario.modificarUsuario(usuario);
+			assertTrue(daoUsuario.obtenerUsuario("hackerman").getPassword().equals("hackthis123"));
+		} catch (MyException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@Test
-	public void testObtenerUsuario() {
-		fail("Not yet implemented");
+	public void test4Eliminar() {
+		Usuario usuario = null;
+		try {
+			usuario = daoUsuario.obtenerUsuario("hackerman");
+			daoUsuario.eliminar(usuario);
+			assertTrue(daoUsuario.obtenerUsuario("hacerman") == null);
+		} catch (MyException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -11,5 +11,5 @@ public interface PrestamoDAO {
 	public Prestamo obtenerPrestamo(PrestamoId prestamoId) throws MyException;
 	public void crearPrestamo(Prestamo prestamo) throws MyException;
 	public void modificarPrestamo(Prestamo prestamo) throws MyException;
-	public void eliminarPrestasmo(Prestamo prestamo) throws MyException;	
+	public void eliminarPrestamo(Prestamo prestamo) throws MyException;	
 }

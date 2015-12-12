@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -26,6 +27,14 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 			dispositivos = criteria.list();
 		} catch (Exception e) {
 			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
 		}
 
 		return dispositivos;
@@ -41,6 +50,14 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 			dispositivo = (Dispositivo) session.get(Dispositivo.class, idDispositivo);
 		} catch (Exception e) {
 			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
 		}
 		return dispositivo;
 	}
@@ -55,7 +72,15 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -68,7 +93,15 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -81,7 +114,15 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 
 	}
 

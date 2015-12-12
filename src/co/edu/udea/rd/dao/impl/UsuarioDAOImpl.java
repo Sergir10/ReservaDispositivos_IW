@@ -5,6 +5,7 @@ import javax.persistence.criteria.Selection;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -16,7 +17,6 @@ import co.edu.udea.rd.exception.MyException;
 
 public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 
-
 	@Override
 	public void crearUsuario(Usuario usuario) throws MyException {
 		Session session = null;
@@ -27,7 +27,15 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -40,7 +48,15 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 
 	}
 
@@ -54,23 +70,38 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 			tx.commit();
 		} catch (Exception e) {
 			throw new MyException(e);
-		} 
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 
 	}
 
 	@Override
 	public Usuario obtenerUsuario(String username) throws MyException {
 		Usuario usuario = new Usuario();
-		Session session= null;
+		Session session = null;
 		try {
-			session =  getSession();
+			session = getSession();
 			session.createCriteria(Usuario.class).add(Restrictions.eq("username", username));
 			usuario = (Usuario) session.get(Usuario.class, username);
 		} catch (Exception e) {
 			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
 		}
 		return usuario;
 	}
-	
 
 }

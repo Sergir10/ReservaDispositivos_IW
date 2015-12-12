@@ -4,13 +4,12 @@
 <!-- Generated 10/12/2015 02:42:37 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
 	<class name="co.edu.udea.rd.dto.Prestamo" table="PRESTAMO">
-		<composite-id name="id" class="co.edu.udea.rd.dto.PrestamoId">
+		<composite-id name="prestamoId" class="co.edu.udea.rd.dto.PrestamoId">
 			<key-many-to-one name="dispositivo"
-				class="co.edu.udea.rd.dto.Dispositivo" fetch="select" lazy="proxy">
+				class="co.edu.udea.rd.dto.Dispositivo">
 				<column name="DISPOSITIVO" length="45" />
 			</key-many-to-one>
-			<key-many-to-one name="usuario" class="co.edu.udea.iw.dto.Usuario"
-				fetch="select" lazy="proxy">
+			<key-many-to-one name="usuario" class="co.edu.udea.rd.dto.Usuario">
 				<column name="USUARIO" length="45" />
 			</key-many-to-one>
 		</composite-id>

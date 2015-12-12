@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import co.edu.udea.rd.dao.PrestamoDAO;
-import co.edu.udea.rd.dto.Dispositivo;
 import co.edu.udea.rd.dto.Prestamo;
 import co.edu.udea.rd.dto.PrestamoId;
 import co.edu.udea.rd.dto.Usuario;
@@ -27,6 +28,14 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 			prestamo = criteria.list();
 		} catch (Exception e) {
 			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
 		}
 
 		return prestamo;
@@ -43,25 +52,82 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 			prestamo = (Prestamo) session.get(Prestamo.class, prestamoId);
 		} catch (Exception e) {
 			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
 		}
+
 		return prestamo;
 	}
 
 	@Override
 	public void crearPrestamo(Prestamo prestamo) throws MyException {
-				
+		Session session = null;
+		try {
+			session = getSession();
+			Transaction tx = session.beginTransaction();
+			session.save(prestamo);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
 	}
 
 	@Override
 	public void modificarPrestamo(Prestamo prestamo) throws MyException {
-		// TODO Auto-generated method stub
-		
+		Session session = null;
+		try {
+			session = getSession();
+			Transaction tx = session.beginTransaction();
+			session.update(prestamo);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
+
 	}
 
 	@Override
-	public void eliminarPrestasmo(Prestamo prestamo) throws MyException {
-		// TODO Auto-generated method stub
-		
+	public void eliminarPrestamo(Prestamo prestamo) throws MyException {
+		Session session = null;
+		try {
+			session = getSession();
+			Transaction tx = session.beginTransaction();
+			session.delete(prestamo);
+			tx.commit();
+		} catch (Exception e) {
+			throw new MyException(e);
+		} finally {
+			if (session != null) {
+				try {
+					session.close();
+				} catch (HibernateException e) {
+					throw new MyException(e);
+				}
+			}
+		}
+
 	}
 
 }

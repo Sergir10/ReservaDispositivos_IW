@@ -5,12 +5,13 @@
 <hibernate-mapping>
 	<class name="co.edu.udea.rd.dto.Dispositivo" table="DISPOSITIVO">
 		<id name="idDispositivo" type="java.lang.String">
-			<column name="IDDISPOSITIVO" />
-			<generator class="assigned" length="45"/>
+			<column name="IDDISPOSITIVO" length="45" />
+			<generator class="assigned" />
 		</id>
 		<many-to-one name="tipoDispositivo" class="co.edu.udea.rd.dto.TipoDispositivo"
 			fetch="select" lazy="proxy">
-			<column name="TIPODISPOSITIVO" precision="11" scale="0" not-null="true" />
+			<column name="TIPODISPOSITIVO" precision="11" scale="0"
+				not-null="true" />
 		</many-to-one>
 		<property name="stock" type="java.lang.Integer">
 			<column name="STOCK" precision="11" scale="0" not-null="true" />
