@@ -112,7 +112,7 @@ public class PrestamoDAOImplTest {
 		}
 	}
 
-	// @Test
+	@Test
 	public void test5EliminarPrestamo() {
 		Prestamo prestamo = null;
 		PrestamoId prestamoId = new PrestamoId();

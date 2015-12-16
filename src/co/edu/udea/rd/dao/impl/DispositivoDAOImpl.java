@@ -61,7 +61,7 @@ public class DispositivoDAOImpl extends HibernateDaoSupport implements Dispositi
 		}
 		return dispositivo;
 	}
-
+	
 	@Override
 	public void crearDispositivo(Dispositivo dispositivo) throws MyException {
 		Session session = null;
