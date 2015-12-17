@@ -1,8 +1,6 @@
-package co.edu.udea.rd.dao.impl;
+package co.edu.udea.rd.bl.impl;
 
 import static org.junit.Assert.*;
-
-import java.util.List;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -12,40 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import co.edu.udea.rd.dto.Rol;
-import co.edu.udea.rd.dto.TipoDispositivo;
 import co.edu.udea.rd.exception.MyException;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springConfigurationFile.xml")
-public class RolDAOImplTest {
+public class DispositivoBLImplTest {
 
 	@Autowired
-	RolDAOImpl daoRol;
+	DispositivoBLImpl blDispositivo;
 
 	@Test
-	public void test1ListarRoles() {
-		List<Rol> roles = null;
-		int total = 1;
+	public void test1RegistrarDispositivo() {
 		try {
-			// Act
-			roles = daoRol.listarRoles();
-			// Assert
-			assertTrue(total <= roles.size());
-		} catch (MyException e) {
-			fail(e.getMessage());
-		}
-	}
-
-	@Test
-	public void test2ObtenerRol() {
-		Rol rol = null;
-		try {
-			// Act
-			rol = daoRol.obtenerRol(1);
-			// Assert
-			assertTrue(rol != null);
+			blDispositivo.registrarDispositivo("nexus_5x", 1, 5, 3);
+			assertTrue(true);
 		} catch (MyException e) {
 			fail(e.getMessage());
 		}

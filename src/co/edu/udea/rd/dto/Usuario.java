@@ -65,7 +65,9 @@ public class Usuario implements Serializable{
 	 */
 	private String celular;
 	
-	
+	/**
+	 * Contructor vacio de Usuario.
+	 */
 	public Usuario() {
 	}
 	

@@ -7,4 +7,5 @@ import co.edu.udea.rd.exception.MyException;
 
 public interface RolDAO {
 	public List<Rol> listarRoles() throws MyException;
+	public Rol obtenerRol(int idRol) throws MyException;
 }

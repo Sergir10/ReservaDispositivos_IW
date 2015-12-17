@@ -25,6 +25,13 @@ public class Rol implements Serializable{
 	private String tipoRol;
 	
 	/**
+	 * Contructor vacio de Rol
+	 */
+	public Rol(){
+		
+	}
+	
+	/**
 	 * Metodos accesores de los atributos que se definieron anteriormente.
 	 */
 	public int getIdRol() {

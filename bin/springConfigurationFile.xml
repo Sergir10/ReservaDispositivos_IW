@@ -58,4 +58,17 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
+	<!-- Inyectar dao de usuario y dao rol en la clase UsuarioBLImpl -->
+	<bean id="UsuarioBL" class="co.edu.udea.rd.bl.impl.UsuarioBLImpl">
+		<property name="daoUsuario" ref="UsuarioDAO"></property>
+		<property name="daoRol" ref="RolDAO"></property>
+	</bean>
+
+	<!-- Inyectar dao de dispositivo y dao de tipo de dispositivo en la clase 
+		DispositivoBLImpl -->
+	<bean id="DispositivoBL" class="co.edu.udea.rd.bl.impl.DispositivoBLImpl">
+		<property name="daoDispositivo" ref="DispositivoDAO"></property>
+		<property name="daoTipoDispositivo" ref="TipoDispositivoDAO"></property>
+	</bean>
+
 </beans>

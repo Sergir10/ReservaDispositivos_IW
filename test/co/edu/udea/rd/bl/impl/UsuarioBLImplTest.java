@@ -1,8 +1,6 @@
-package co.edu.udea.rd.dao.impl;
+package co.edu.udea.rd.bl.impl;
 
 import static org.junit.Assert.*;
-
-import java.util.List;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -12,40 +10,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import co.edu.udea.rd.dto.Rol;
-import co.edu.udea.rd.dto.TipoDispositivo;
 import co.edu.udea.rd.exception.MyException;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springConfigurationFile.xml")
-public class RolDAOImplTest {
+public class UsuarioBLImplTest {
 
 	@Autowired
-	RolDAOImpl daoRol;
+	UsuarioBLImpl blUsuario;
 
 	@Test
-	public void test1ListarRoles() {
-		List<Rol> roles = null;
-		int total = 1;
+	public void test1RegistrarUsuario() {
 		try {
-			// Act
-			roles = daoRol.listarRoles();
-			// Assert
-			assertTrue(total <= roles.size());
+			blUsuario.registrarUsuario("andres", "123456", "123456", "Andres", "Munera", "CC", "123456789",
+					"andres@gmail.com", 2, "55684645", "6548569541");
+			assertTrue(true);
 		} catch (MyException e) {
 			fail(e.getMessage());
 		}
 	}
 
 	@Test
-	public void test2ObtenerRol() {
-		Rol rol = null;
+	public void test2actualizarInformacionPersonalUsuario() {
 		try {
-			// Act
-			rol = daoRol.obtenerRol(1);
-			// Assert
-			assertTrue(rol != null);
+			blUsuario.actualizarInformacionPersonalUsuario("andres", "123456", "123456", "Andres Felipe", "Munera",
+					"andres2@gmail.com", "55684645", "6548569541");
+			assertTrue(true);
 		} catch (MyException e) {
 			fail(e.getMessage());
 		}
