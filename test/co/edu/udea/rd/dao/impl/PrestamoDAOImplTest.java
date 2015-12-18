@@ -20,10 +20,25 @@ import co.edu.udea.rd.dto.Prestamo;
 import co.edu.udea.rd.dto.PrestamoId;
 import co.edu.udea.rd.exception.MyException;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+/**
+ * Clase para realizar pruebas de los metodos implementados en PrestamoDAOImpl.
+ * 
+ * @author Sergio Giraldo - James Garzón - Juan José Martinez.
+ *
+ */
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING) // Las pruebas son ejecutadas en
+												// orden alfabetico.
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springConfigurationFile.xml")
 public class PrestamoDAOImplTest {
+
+	/**
+	 * 
+	 * Se inyectan los objetos DAO necesarios para las pruebas. En este caso los
+	 * DAO Implementado de Prestamo, Usuario y Dispositivo.
+	 * 
+	 */
 
 	@Autowired
 	PrestamoDAOImpl daoPrestamo;
@@ -34,6 +49,12 @@ public class PrestamoDAOImplTest {
 	@Autowired
 	DispositivoDAOImpl daoDispositivo;
 
+	/**
+	 * 
+	 * Metodo para probar el metodo listarPrestamos de la clase PrestamoDAOImpl,
+	 * esta prueba se acierta si se obtiene 1 o mas prestamos.
+	 * 
+	 */
 	@Test
 	public void test1ListarPrestamos() {
 		List<Prestamo> prestamos = null;
@@ -48,12 +69,20 @@ public class PrestamoDAOImplTest {
 		}
 	}
 
+	/**
+	 * 
+	 * Metodo para probar el metodo crearPrestamo de la clase PrestamoDAOImpl,
+	 * esta prueba se acierta si no se lanza ninguna excepcion en el proceso de
+	 * insercion.
+	 * 
+	 */
 	@Test
 	public void test2CrearPrestamo() {
 		Prestamo prestamo = new Prestamo();
 		PrestamoId prestamoId = new PrestamoId();
 
 		try {
+			// Act
 			prestamoId.setUsuario(daoUsuario.obtenerUsuario("tinez7g"));
 			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
 
@@ -64,6 +93,7 @@ public class PrestamoDAOImplTest {
 
 			daoPrestamo.crearPrestamo(prestamo);
 
+			// Assert
 			assertTrue(true);
 		} catch (MyException e) {
 			e.printStackTrace();
@@ -71,40 +101,55 @@ public class PrestamoDAOImplTest {
 
 	}
 
+	/**
+	 * 
+	 * Metodo para probar el metodo obtenerPrestamo de la clase PrestamoDAOImpl,
+	 * esta prueba se acierta si el prestamo obtenido es diferente de null.
+	 * 
+	 */
 	@Test
 	public void test3ObtenerPrestamo() {
 		Prestamo prestamo = null;
 		PrestamoId prestamoId = new PrestamoId();
 		try {
+			// Act
 			prestamoId.setUsuario(daoUsuario.obtenerUsuario("tinez7g"));
 			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
 
 			prestamo = daoPrestamo.obtenerPrestamo(prestamoId);
+			// Assert
 			assertTrue(prestamo != null);
 		} catch (MyException e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * 
+	 * Metodo para probar el metodo modificarPrestamo de la clase
+	 * PrestamoDAOImpl, esta prueba se acierta si al obtener el prestamo
+	 * modificado el campo modificado es igual al esperado.
+	 * 
+	 */
 	@Test
 	public void test4ModificarPrestamo() {
 		Prestamo prestamo = null;
 		PrestamoId prestamoId = new PrestamoId();
 		Date fecha = null;
+		Date fechaNueva = null;
 		SimpleDateFormat formatoFecha = null;
 		try {
+			// Act
 			prestamoId.setUsuario(daoUsuario.obtenerUsuario("tinez7g"));
 			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
-
 			prestamo = daoPrestamo.obtenerPrestamo(prestamoId);
-
 			formatoFecha = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 			fecha = formatoFecha.parse("01/01/2016");
 			prestamo.setFechaFinalPrestamo(fecha);
-
 			daoPrestamo.modificarPrestamo(prestamo);
-
-			assertTrue(daoPrestamo.obtenerPrestamo(prestamoId).getFechaFinalPrestamo().getTime() == fecha.getTime());
+			fechaNueva = daoPrestamo.obtenerPrestamo(prestamoId).getFechaFinalPrestamo();
+			// Assert
+			assertTrue(fechaNueva.getTime() == fecha.getTime());
 		} catch (MyException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -112,17 +157,25 @@ public class PrestamoDAOImplTest {
 		}
 	}
 
+	/**
+	 * 
+	 * Metodo para probar el metodo eliminarPrestamo de la clase
+	 * PrestamoDAOImpl, esta prueba se acierta si al obtener el prestamo
+	 * eliminado se tiene un null.
+	 * 
+	 */
 	@Test
 	public void test5EliminarPrestamo() {
 		Prestamo prestamo = null;
 		PrestamoId prestamoId = new PrestamoId();
 		try {
+			// Act
 			prestamoId.setUsuario(daoUsuario.obtenerUsuario("tinez7g"));
 			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
-
 			prestamo = daoPrestamo.obtenerPrestamo(prestamoId);
 			prestamo.setFechaFinalPrestamo(new Date(2016, 1, 1));
 			daoPrestamo.eliminarPrestamo(prestamo);
+			// Assert
 			assertTrue(daoPrestamo.obtenerPrestamo(prestamoId) == null);
 		} catch (MyException e) {
 			e.printStackTrace();

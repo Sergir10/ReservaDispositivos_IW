@@ -1,10 +1,5 @@
 package co.edu.udea.rd.dao.impl;
 
-import javax.persistence.criteria.Selection;
-
-import java.util.List;
-
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

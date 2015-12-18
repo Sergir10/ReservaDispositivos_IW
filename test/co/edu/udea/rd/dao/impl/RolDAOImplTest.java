@@ -13,17 +13,35 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import co.edu.udea.rd.dto.Rol;
-import co.edu.udea.rd.dto.TipoDispositivo;
 import co.edu.udea.rd.exception.MyException;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+/**
+ * Clase para realizar pruebas de los metodos implementados en RolDAOImpl.
+ * 
+ * @author Sergio Giraldo - James Garzón - Juan José Martinez.
+ *
+ */
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING) // Las pruebas son ejecutadas en
+												// orden alfabetico.
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springConfigurationFile.xml")
 public class RolDAOImplTest {
 
+	/**
+	 * 
+	 * Se inyecta un objeto RolDAOImpl para ser usado en la clase.
+	 * 
+	 */
 	@Autowired
 	RolDAOImpl daoRol;
 
+	/**
+	 * 
+	 * Metodo para probar el metodo listarRoles de la clase RolDAOImpl, esta
+	 * prueba se acierta si se obtiene 1 o mas roles.
+	 * 
+	 */
 	@Test
 	public void test1ListarRoles() {
 		List<Rol> roles = null;
@@ -38,6 +56,12 @@ public class RolDAOImplTest {
 		}
 	}
 
+	/**
+	 * 
+	 * Metodo para probar el metodo obtenerRol de la clase RolDAOImpl, esta
+	 * prueba se acierta si el rol obtenido es diferente de null.
+	 * 
+	 */
 	@Test
 	public void test2ObtenerRol() {
 		Rol rol = null;

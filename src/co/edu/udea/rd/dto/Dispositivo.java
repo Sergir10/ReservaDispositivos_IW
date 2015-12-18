@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Dispositivo implements Serializable {
 
 	/**
-	 * Codico unico que nos servira para identifiar un dispositivo.
+	 * Codigo unico que nos servira para identifiar un dispositivo.
 	 */
 	private String idDispositivo;
 
