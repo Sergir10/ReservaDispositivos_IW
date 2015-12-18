@@ -16,7 +16,7 @@ import co.edu.udea.rd.dto.Rol;
 import co.edu.udea.rd.exception.MyException;
 
 /**
- * Clase para realizar pruebas de los metodos implementados en RolDAOImpl.
+ * Clase para realizar pruebas de los métodos implementados en RolDAOImpl.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
  *
@@ -38,7 +38,7 @@ public class RolDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo listarRoles de la clase RolDAOImpl, esta
+	 * Método para probar el método listarRoles de la clase RolDAOImpl, esta
 	 * prueba se acierta si se obtiene 1 o mas roles.
 	 * 
 	 */
@@ -58,7 +58,7 @@ public class RolDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo obtenerRol de la clase RolDAOImpl, esta
+	 * Método para probar el método obtenerRol de la clase RolDAOImpl, esta
 	 * prueba se acierta si el rol obtenido es diferente de null.
 	 * 
 	 */

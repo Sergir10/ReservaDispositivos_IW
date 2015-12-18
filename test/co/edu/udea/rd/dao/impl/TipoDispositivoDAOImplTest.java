@@ -16,7 +16,7 @@ import co.edu.udea.rd.dto.TipoDispositivo;
 import co.edu.udea.rd.exception.MyException;
 
 /**
- * Clase para realizar pruebas de los metodos implementados en
+ * Clase para realizar pruebas de los métodos implementados en
  * TipoDispositivoDAOImpl.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
@@ -39,7 +39,7 @@ public class TipoDispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo listarTiposDeDispositivos de la clase
+	 * Método para probar el método listarTiposDeDispositivos de la clase
 	 * TipoDispositivoDAOImpl, esta prueba se acierta si se obtiene 1 o mas
 	 * tipos de dispositivos.
 	 * 
@@ -60,7 +60,7 @@ public class TipoDispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo obtenerTipoDeDispositivo de la clase
+	 * Método para probar el método obtenerTipoDeDispositivo de la clase
 	 * TipoDispositivoDAOImpl, esta prueba se acierta si el tipo de dispositivo
 	 * obtenido es diferente de null.
 	 * 

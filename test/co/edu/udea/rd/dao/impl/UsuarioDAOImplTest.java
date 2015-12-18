@@ -16,7 +16,7 @@ import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
 /**
- * Clase para realizar pruebas de los metodos implementados en UsuarioDAOImpl.
+ * Clase para realizar pruebas de los métodos implementados en UsuarioDAOImpl.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
  *
@@ -38,9 +38,9 @@ public class UsuarioDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo crearUsuario de la clase UsuarioDAOImpl,
-	 * esta prueba se acierta si no se lanza ninguna excepcion en el proceso de
-	 * insercion.
+	 * Método para probar el método crearUsuario de la clase UsuarioDAOImpl,
+	 * esta prueba se acierta si no se lanza ninguna excepción en el proceso de
+	 * inserción.
 	 * 
 	 */
 	@Test
@@ -71,7 +71,7 @@ public class UsuarioDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo obtenerUsuario de la clase UsuarioDAOImpl,
+	 * Método para probar el método obtenerUsuario de la clase UsuarioDAOImpl,
 	 * esta prueba se acierta si el usuario obtenido es diferente de null.
 	 * 
 	 */
@@ -90,7 +90,7 @@ public class UsuarioDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo modificarUsuario de la clase UsuarioDAOImpl,
+	 * Método para probar el método modificarUsuario de la clase UsuarioDAOImpl,
 	 * esta prueba se acierta si al obtener el usuario modificado el campo
 	 * modificado es igual al esperado.
 	 * 
@@ -113,7 +113,7 @@ public class UsuarioDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo eliminarUsuario de la clase UsuarioDAOImpl,
+	 * Método para probar el método eliminarUsuario de la clase UsuarioDAOImpl,
 	 * esta prueba se acierta si al obtener el usuario eliminado se tiene un
 	 * null.
 	 * 

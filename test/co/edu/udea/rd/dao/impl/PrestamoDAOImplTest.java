@@ -21,7 +21,7 @@ import co.edu.udea.rd.dto.PrestamoId;
 import co.edu.udea.rd.exception.MyException;
 
 /**
- * Clase para realizar pruebas de los metodos implementados en PrestamoDAOImpl.
+ * Clase para realizar pruebas de los métodos implementados en PrestamoDAOImpl.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
  *
@@ -51,7 +51,7 @@ public class PrestamoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo listarPrestamos de la clase PrestamoDAOImpl,
+	 * Método para probar el método listarPrestamos de la clase PrestamoDAOImpl,
 	 * esta prueba se acierta si se obtiene 1 o mas prestamos.
 	 * 
 	 */
@@ -72,8 +72,8 @@ public class PrestamoDAOImplTest {
 	/**
 	 * 
 	 * Metodo para probar el metodo crearPrestamo de la clase PrestamoDAOImpl,
-	 * esta prueba se acierta si no se lanza ninguna excepcion en el proceso de
-	 * insercion.
+	 * esta prueba se acierta si no se lanza ninguna excepción en el proceso de
+	 * inserción.
 	 * 
 	 */
 	@Test
@@ -103,7 +103,7 @@ public class PrestamoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo obtenerPrestamo de la clase PrestamoDAOImpl,
+	 * Método para probar el método obtenerPrestamo de la clase PrestamoDAOImpl,
 	 * esta prueba se acierta si el prestamo obtenido es diferente de null.
 	 * 
 	 */
@@ -126,7 +126,7 @@ public class PrestamoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo modificarPrestamo de la clase
+	 * Método para probar el método modificarPrestamo de la clase
 	 * PrestamoDAOImpl, esta prueba se acierta si al obtener el prestamo
 	 * modificado el campo modificado es igual al esperado.
 	 * 
@@ -159,7 +159,7 @@ public class PrestamoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo eliminarPrestamo de la clase
+	 * Método para probar el método eliminarPrestamo de la clase
 	 * PrestamoDAOImpl, esta prueba se acierta si al obtener el prestamo
 	 * eliminado se tiene un null.
 	 * 

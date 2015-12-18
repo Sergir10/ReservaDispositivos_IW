@@ -4,15 +4,17 @@ import co.edu.udea.rd.exception.MyException;
 
 /**
  * Interface de la lógica de negocio del Usuario, aquí se definen los metodos a
- * usar en la logíca de negocio de los usuarios.
+ * usar en la lógica de negocio de los usuarios.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
  *
  */
-
 public interface UsuarioBL {
 
 	/**
+	 * 
+	 * Método encargado de validar los datos ingresados para luego realizar
+	 * creación de un usuario.
 	 * 
 	 * 
 	 * @param username
@@ -33,6 +35,9 @@ public interface UsuarioBL {
 			String celular) throws MyException;
 
 	/**
+	 * 
+	 * Método encargado de validar los datos ingresados para luego realizar la
+	 * modificación de la información personal de un usuario.
 	 * 
 	 * @param username
 	 * @param password

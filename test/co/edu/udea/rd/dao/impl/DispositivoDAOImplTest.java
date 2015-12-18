@@ -17,7 +17,7 @@ import co.edu.udea.rd.dto.TipoDispositivo;
 import co.edu.udea.rd.exception.MyException;
 
 /**
- * Clase para realizar pruebas de los metodos implementados en
+ * Clase para realizar pruebas de los métodos implementados en
  * DispositivoDAOImpl.
  * 
  * @author Sergio Giraldo - James GarzÃ³n - Juan JosÃ© Martinez.
@@ -40,7 +40,7 @@ public class DispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo listarDispositivos de la clase
+	 * Método para probar el método listarDispositivos de la clase
 	 * DispositivoDAOImpl, esta prueba se acierta si se obtiene 1 o mas
 	 * dispositivos.
 	 * 
@@ -61,9 +61,9 @@ public class DispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo crearDispositivo de la clase
+	 * Método para probar el método crearDispositivo de la clase
 	 * DispositivoDAOImpl, esta prueba se acierta si no se lanza ninguna
-	 * excepcion en el proceso de insercion.
+	 * excepción en el proceso de inserción.
 	 * 
 	 */
 	@Test
@@ -91,7 +91,7 @@ public class DispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo obtenerDispositivo de la clase
+	 * Método para probar el método obtenerDispositivo de la clase
 	 * DispositivoDAOImpl, esta prueba se acierta si el dispositivo obtenido es
 	 * diferente de null.
 	 * 
@@ -111,7 +111,7 @@ public class DispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo modificarDispositivo de la clase
+	 * Método para probar el método modificarDispositivo de la clase
 	 * DispositivoDAOImpl, esta prueba se acierta si al obtener el dispositivo
 	 * modificado el campo modificado es igual al esperado.
 	 * 
@@ -134,7 +134,7 @@ public class DispositivoDAOImplTest {
 
 	/**
 	 * 
-	 * Metodo para probar el metodo eliminarDispositivo de la clase
+	 * Método para probar el método eliminarDispositivo de la clase
 	 * DispositivoDAOImpl, esta prueba se acierta si al obtener el dispositivo
 	 * eliminado se tiene un null.
 	 * 

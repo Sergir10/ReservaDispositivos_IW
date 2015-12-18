@@ -18,6 +18,12 @@ import co.edu.udea.rd.util.validations.Validaciones;
  */
 public class UsuarioBLImpl implements UsuarioBL {
 
+	/**
+	 * 
+	 * Se inyectan los objetos DAO necesarios la clase. En este caso los DAO
+	 * Implementado de Usuario y Rol.
+	 * 
+	 */
 	private UsuarioDAO daoUsuario;
 	private RolDAO daoRol;
 
@@ -28,6 +34,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 
 		Usuario usuario = new Usuario();
 		Rol rol = null;
+
+		// Se validan que los campos obligatorios no sean vacios o nulos.
 
 		if ((username == null) || "".equals(username)) {
 			throw new MyException("Nombre de usuario invalido", null);
@@ -57,22 +65,40 @@ public class UsuarioBLImpl implements UsuarioBL {
 			throw new MyException("Rol invalido", null);
 		}
 
+		// Se valida que el nombre de usuario no exista todavia.
+
 		if (daoUsuario.obtenerUsuario(username) != null) {
 			throw new MyException("Nombre de usuario ya existe", null);
 		}
+
+		// Se valida el tamaño minimo de la contraseña.
+
 		if (password.length() < 5) {
 			throw new MyException("Contraseña invalida, mínimo 5 caracteres", null);
 		}
+
+		// Se valida que la contraseña y confirmación de la contraseña sean
+		// iguales.
+
 		if (!password.equals(passwordConfirmacion)) {
 			throw new MyException("Contraseñas no coinciden", null);
 		}
+
+		// Se valida el formato del correo usando el método isEmail de la clase
+		// Validaciones.
+
 		if (!Validaciones.isEmail(correo)) {
 			throw new MyException("Correo invalido", null);
 		}
+
+		// Se obtiene el rol y se valida que no sea nulo.
+
 		rol = daoRol.obtenerRol(idRol);
 		if (rol == null) {
 			throw new MyException("Rol invalido", null);
 		}
+
+		// Se asignan todos los datos al objeto DTO de Usuario.
 
 		usuario.setUsername(username);
 		usuario.setPassword(password);
@@ -85,6 +111,9 @@ public class UsuarioBLImpl implements UsuarioBL {
 		usuario.setTelefono(telefono);
 		usuario.setCelular(celular);
 
+		// Se hace uso del método crearUsuario de la clase UsuarioDAOImpl, para
+		// guardar la información del DTO en la base de datos.
+
 		daoUsuario.crearUsuario(usuario);
 
 	}
@@ -93,6 +122,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 	public void actualizarInformacionPersonalUsuario(String username, String password, String passwordConfirmacion,
 			String nombre, String apellido, String correo, String telefono, String celular) throws MyException {
 		Usuario usuario = null;
+
+		// Se validan que los campos obligatorios no sean vacios o nulos.
 
 		if ((username == null) || "".equals(username)) {
 			throw new MyException("Nombre de usuario invalido", null);
@@ -109,23 +140,38 @@ public class UsuarioBLImpl implements UsuarioBL {
 		if ((apellido == null) || "".equals(apellido)) {
 			throw new MyException("Apellido invalido", null);
 		}
-
 		if ((correo == null) || "".equals(correo)) {
 			throw new MyException("Correo invalido", null);
 		}
+
+		// Se valida que el usuario a modificar si exita.
+
 		usuario = daoUsuario.obtenerUsuario(username);
 		if (usuario == null) {
 			throw new MyException("Error interno.", null);
 		}
+
+		// Se valida el tamaño minimo de la contraseña.
+
 		if (password.length() < 5) {
 			throw new MyException("Contraseña invalida, mínimo 5 caracteres", null);
 		}
+
+		// Se valida que la contraseña y confirmación de la contraseña sean
+		// iguales.
+
 		if (!password.equals(passwordConfirmacion)) {
 			throw new MyException("Contraseñas no coinciden", null);
 		}
+
+		// Se valida el formato del correo usando el método isEmail de la clase
+		// Validaciones.
+
 		if (!Validaciones.isEmail(correo)) {
 			throw new MyException("Correo invalido", null);
 		}
+
+		// Se asignan los datos que se pueden modificar en el DTO de Usuario
 
 		usuario.setUsername(username);
 		usuario.setPassword(password);
@@ -135,9 +181,18 @@ public class UsuarioBLImpl implements UsuarioBL {
 		usuario.setTelefono(telefono);
 		usuario.setCelular(celular);
 
+		// Se hace uso del método modificarUsuario de la clase UsuarioDAOImpl,
+		// para modificar la información del DTO en la base de datos.
+
 		daoUsuario.modificarUsuario(usuario);
 	}
 
+	/*
+	 * 
+	 * Método accesores para los objetos que se inyectan en esta clase
+	 * daoUsuario y daoRol.
+	 * 
+	 */
 	public UsuarioDAO getDaoUsuario() {
 		return daoUsuario;
 	}
