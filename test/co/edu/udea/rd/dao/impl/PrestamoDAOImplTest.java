@@ -87,6 +87,7 @@ public class PrestamoDAOImplTest {
 			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
 
 			prestamo.setPrestamoId(prestamoId);
+			prestamo.setEstado("pendiente");
 			prestamo.setFechaSolicitud(new Date());
 			prestamo.setFechaInicialPrestamo(new Date());
 			prestamo.setFechaFinalPrestamo(new Date());
@@ -146,6 +147,7 @@ public class PrestamoDAOImplTest {
 			formatoFecha = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 			fecha = formatoFecha.parse("01/01/2016");
 			prestamo.setFechaFinalPrestamo(fecha);
+			prestamo.setEstado("terminado");
 			daoPrestamo.modificarPrestamo(prestamo);
 			fechaNueva = daoPrestamo.obtenerPrestamo(prestamoId).getFechaFinalPrestamo();
 			// Assert
@@ -164,7 +166,7 @@ public class PrestamoDAOImplTest {
 	 * eliminado se tiene un null.
 	 * 
 	 */
-	@Test
+	// @Test
 	public void test5EliminarPrestamo() {
 		Prestamo prestamo = null;
 		PrestamoId prestamoId = new PrestamoId();
@@ -180,6 +182,24 @@ public class PrestamoDAOImplTest {
 		} catch (MyException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void test6validarDisponibilidadPrestamo() {
+		Prestamo prestamo = null;
+		PrestamoId prestamoId = new PrestamoId();
+		try {
+			// Act
+			prestamoId.setUsuario(daoUsuario.obtenerUsuario("tinez7g"));
+			prestamoId.setDispositivo(daoDispositivo.obtenerDispositivo("quad_484746"));
+
+			prestamo = daoPrestamo.obtenerPrestamo(prestamoId);
+			// Assert
+			assertTrue(daoPrestamo.validarDisponibilidadPrestamo(prestamo));
+		} catch (MyException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

@@ -13,6 +13,9 @@
 				<column name="USUARIO" length="45" />
 			</key-many-to-one>
 		</composite-id>
+		<property name="estado" type="java.lang.String">
+			<column name="ESTADO" length="20" not-null="true" />
+		</property>
 		<property name="fechaSolicitud" type="java.util.Date">
 			<column name="FECHASOLICITUD" not-null="true" />
 		</property>

@@ -22,6 +22,11 @@ public class Prestamo implements Serializable{
 	private PrestamoId prestamoId;
 	
 	/**
+	 * Estado de la solicitud del prestamo (Pendiente, Prestado, Rechazado o Terminado).
+	 */
+	private String estado;
+	
+	/**
 	 * Fecha en que se realiza la solicitud del prestamo.
 	 */
 	private Date fechaSolicitud;
@@ -46,6 +51,12 @@ public class Prestamo implements Serializable{
 	}
 	public void setPrestamoId(PrestamoId prestamoId) {
 		this.prestamoId = prestamoId;
+	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;

@@ -74,5 +74,20 @@ public class UsuarioBLImplTest {
 			fail(e.getMessage());
 		}
 	}
+	
+	@Test 
+	public void test3Login(){
+		boolean valido = false;
+		try {
+			// Act
+			valido = blUsuario.loginUsuario("andres", "123456");
+			// Assert
+			assertTrue(valido);
+		} catch (MyException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 
 }

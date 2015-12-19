@@ -1,5 +1,6 @@
 package co.edu.udea.rd.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import co.edu.udea.rd.dto.Prestamo;
@@ -11,5 +12,6 @@ public interface PrestamoDAO {
 	public Prestamo obtenerPrestamo(PrestamoId prestamoId) throws MyException;
 	public void crearPrestamo(Prestamo prestamo) throws MyException;
 	public void modificarPrestamo(Prestamo prestamo) throws MyException;
-	public void eliminarPrestamo(Prestamo prestamo) throws MyException;	
+	public void eliminarPrestamo(Prestamo prestamo) throws MyException;
+	public Boolean validarDisponibilidadPrestamo(Prestamo prestamo) throws MyException;
 }

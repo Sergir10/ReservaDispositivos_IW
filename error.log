@@ -1,0 +1,141 @@
+2015-12-18 16:10:54 INFO  DefaultTestContextBootstrapper:256 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-12-18 16:10:54 INFO  DefaultTestContextBootstrapper:204 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2015-12-18 16:10:54 INFO  DefaultTestContextBootstrapper:182 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3f2a3a5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4cb2c100, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6fb554cc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@614c5515]
+2015-12-18 16:10:54 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [springConfigurationFile.xml]
+2015-12-18 16:10:54 INFO  GenericApplicationContext:510 - Refreshing org.springframework.context.support.GenericApplicationContext@5034c75a: startup date [Fri Dec 18 16:10:54 COT 2015]; root of context hierarchy
+2015-12-18 16:10:54 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-12-18 16:10:54 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2015-12-18 16:10:54 INFO  Environment:603 - Hibernate 3.6.10.Final
+2015-12-18 16:10:54 INFO  Environment:636 - hibernate.properties not found
+2015-12-18 16:10:54 INFO  Environment:814 - Bytecode provider name : javassist
+2015-12-18 16:10:54 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2015-12-18 16:10:54 WARN  DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-12-18 16:10:55 WARN  DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-12-18 16:10:55 WARN  DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-12-18 16:10:55 WARN  DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-12-18 16:10:55 WARN  DTDEntityResolver:73 - recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-12-18 16:10:55 INFO  HbmBinder:353 - Mapping class: co.edu.udea.rd.dto.Usuario -> USUARIO
+2015-12-18 16:10:55 INFO  HbmBinder:353 - Mapping class: co.edu.udea.rd.dto.TipoDispositivo -> TIPODISPOSITIVO
+2015-12-18 16:10:55 INFO  HbmBinder:353 - Mapping class: co.edu.udea.rd.dto.Rol -> ROL
+2015-12-18 16:10:55 INFO  HbmBinder:353 - Mapping class: co.edu.udea.rd.dto.Dispositivo -> DISPOSITIVO
+2015-12-18 16:10:55 INFO  HbmBinder:353 - Mapping class: co.edu.udea.rd.dto.Prestamo -> PRESTAMO
+2015-12-18 16:10:55 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2015-12-18 16:10:55 INFO  LocalSessionFactoryBean:713 - Building new Hibernate SessionFactory
+2015-12-18 16:10:55 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2015-12-18 16:10:55 WARN  RootClass:253 - composite-id class does not override equals(): co.edu.udea.rd.dto.PrestamoId
+2015-12-18 16:10:55 WARN  RootClass:258 - composite-id class does not override hashCode(): co.edu.udea.rd.dto.PrestamoId
+2015-12-18 16:10:55 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2015-12-18 16:10:55 INFO  Dialect:136 - Using dialect: org.hibernate.dialect.MySQLDialect
+2015-12-18 16:10:55 INFO  SettingsFactory:126 - Database ->
+       name : MySQL
+    version : 5.6.26
+      major : 5
+      minor : 6
+2015-12-18 16:10:55 INFO  SettingsFactory:132 - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+2015-12-18 16:10:55 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2015-12-18 16:10:55 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2015-12-18 16:10:55 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:190 - JDBC batch size: 15
+2015-12-18 16:10:55 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2015-12-18 16:10:55 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2015-12-18 16:10:55 INFO  SettingsFactory:214 - Connection release mode: auto
+2015-12-18 16:10:55 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 2
+2015-12-18 16:10:55 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2015-12-18 16:10:55 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2015-12-18 16:10:55 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2015-12-18 16:10:55 INFO  SettingsFactory:261 - Query language substitutions: {}
+2015-12-18 16:10:55 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:271 - Second-level cache: enabled
+2015-12-18 16:10:55 INFO  SettingsFactory:275 - Query cache: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2015-12-18 16:10:55 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2015-12-18 16:10:55 INFO  SettingsFactory:323 - Statistics: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2015-12-18 16:10:55 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2015-12-18 16:10:55 INFO  SettingsFactory:347 - Named query checking : enabled
+2015-12-18 16:10:55 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+2015-12-18 16:10:55 INFO  SessionFactoryImpl:202 - building session factory
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@3bcd05cb
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@3b6d844d
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@36804139
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [blob] overrides previous : org.hibernate.type.BlobType@20bd8be5
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@20bd8be5
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [clob] overrides previous : org.hibernate.type.ClobType@730d2164
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@730d2164
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@24959ca4
+2015-12-18 16:10:55 INFO  BasicTypeRegistry:150 - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@10289886
+2015-12-18 16:10:55 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2015-12-18 16:10:56 INFO  GenericApplicationContext:862 - Closing org.springframework.context.support.GenericApplicationContext@5034c75a: startup date [Fri Dec 18 16:10:54 COT 2015]; root of context hierarchy
+2015-12-18 16:10:56 INFO  LocalSessionFactoryBean:225 - Closing Hibernate SessionFactory
+2015-12-18 16:10:56 INFO  SessionFactoryImpl:927 - closing
+2015-12-18 20:02:29 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:02:40 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:04:44 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:05:13 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:09:21 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:11:20 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:11:21 ERROR JDBCExceptionReporter:234 - Unknown column 'disp' in 'field list'
+2015-12-18 20:12:20 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:12:21 ERROR JDBCExceptionReporter:234 - Unknown column 'disp' in 'field list'
+2015-12-18 20:20:32 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:22:36 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:24:25 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:31:24 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:32:21 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:33:09 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:37:18 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:38:52 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:40:19 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:41:14 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:43:35 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:45:29 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:46:21 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:46:34 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:47:01 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:48:42 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:51:19 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:51:47 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:52:54 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:53:05 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:55:12 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:55:24 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 20:57:38 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:03:22 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:03:45 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:04:15 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:06:20 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:08:52 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:09:58 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:11:04 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:11:49 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:12:06 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:12:24 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:12:49 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:13:14 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:13:57 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:14:29 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:15:04 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:15:26 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:17:39 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:18:16 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:19:16 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:20:34 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:22:46 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:24:09 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:26:04 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:26:55 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:27:14 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:29:08 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:29:52 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'
+2015-12-18 21:30:08 ERROR JDBCExceptionReporter:234 - Duplicate entry 'quad_484746-tinez7g' for key 'PRIMARY'

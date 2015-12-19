@@ -70,5 +70,13 @@
 		<property name="daoDispositivo" ref="DispositivoDAO"></property>
 		<property name="daoTipoDispositivo" ref="TipoDispositivoDAO"></property>
 	</bean>
+	
+	<!-- Inyectar dao de dispositivo, dao prestamo y dao usuario en la clase 
+		PrestamoBLImpl -->
+	<bean id="PrestamoBL" class="co.edu.udea.rd.bl.impl.PrestamoBLImpl">
+		<property name="daoPrestamo" ref="PrestamoDAO"></property>
+		<property name="daoDispositivo" ref="DispositivoDAO"></property>
+		<property name="daoUsuario" ref="UsuarioDAO"></property>
+	</bean>
 
 </beans>

@@ -6,6 +6,7 @@ import co.edu.udea.rd.dao.UsuarioDAO;
 import co.edu.udea.rd.dto.Rol;
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
+import co.edu.udea.rd.util.encode.Cifrar;
 import co.edu.udea.rd.util.validations.Validaciones;
 
 /**
@@ -34,6 +35,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 
 		Usuario usuario = new Usuario();
 		Rol rol = null;
+		Cifrar cifrar = new Cifrar();
 
 		// Se validan que los campos obligatorios no sean vacios o nulos.
 
@@ -101,7 +103,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 		// Se asignan todos los datos al objeto DTO de Usuario.
 
 		usuario.setUsername(username);
-		usuario.setPassword(password);
+		usuario.setPassword(cifrar.encrypt(password));
 		usuario.setNombre(nombre);
 		usuario.setApellido(apellido);
 		usuario.setTipoDocumento(tipoDocumento);
@@ -122,7 +124,8 @@ public class UsuarioBLImpl implements UsuarioBL {
 	public void actualizarInformacionPersonalUsuario(String username, String password, String passwordConfirmacion,
 			String nombre, String apellido, String correo, String telefono, String celular) throws MyException {
 		Usuario usuario = null;
-
+		Cifrar cifrar = new Cifrar();
+		
 		// Se validan que los campos obligatorios no sean vacios o nulos.
 
 		if ((username == null) || "".equals(username)) {
@@ -174,7 +177,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 		// Se asignan los datos que se pueden modificar en el DTO de Usuario
 
 		usuario.setUsername(username);
-		usuario.setPassword(password);
+		usuario.setPassword(cifrar.encrypt(password));
 		usuario.setNombre(nombre);
 		usuario.setApellido(apellido);
 		usuario.setCorreo(correo);
@@ -186,6 +189,30 @@ public class UsuarioBLImpl implements UsuarioBL {
 
 		daoUsuario.modificarUsuario(usuario);
 	}
+	
+	@Override
+	public boolean loginUsuario(String username, String password) throws MyException {
+		Usuario usuario;
+		Cifrar cifrar = new Cifrar();
+		
+		// Verificamos que el nombre de usuario no sea null o vacio.
+		if ((username == null) || "".equals(username)) {
+			throw new MyException("Usuario no válido", null);
+		}
+		
+		// Verificamos que el usuario exista en la base de datos.
+		usuario = daoUsuario.obtenerUsuario(username);
+		if (usuario == null) {
+			return false;
+		}
+		
+		// Verificamos que la contraseña coincida con la almacenada en la base de datos.
+		if (!cifrar.encrypt(password).equals(usuario.getPassword())) {
+			return false;
+		}
+		return true;				
+	}
+	
 
 	/*
 	 * 
