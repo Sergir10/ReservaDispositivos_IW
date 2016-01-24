@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/12/2015 02:18:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="co.edu.udea.rd.dto.Usuario" table="USUARIO">
+		<id name="username" type="java.lang.String">
+			<column name="USERNAME" length="45" />
+			<generator class="assigned" />
+		</id>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" length="125" not-null="true" />
+		</property>
+		<property name="nombre" type="java.lang.String">
+			<column name="NOMBRE" length="45" not-null="true" />
+		</property>
+		<property name="apellido" type="java.lang.String">
+			<column name="APELLIDO" length="45" not-null="true" />
+		</property>
+		<property name="tipoDocumento" type="java.lang.String">
+			<column name="TIPODOCUMENTO" length="15" not-null="true" />
+		</property>
+		<property name="nroDocumento" type="java.lang.String">
+			<column name="NRODOCUMENTO" length="15" not-null="true" />
+		</property>
+		<property name="correo" type="java.lang.String">
+			<column name="CORREO" length="45" not-null="true" />
+		</property>
+		<many-to-one name="rol" class="co.edu.udea.rd.dto.Rol"
+			fetch="select" lazy="proxy">
+			<column name="ROL" precision="11" scale="0" not-null="true" />
+		</many-to-one>
+		<property name="telefono" type="java.lang.String">
+			<column name="TELEFONO" length="10" not-null="false" />
+		</property>
+		<property name="celular" type="java.lang.String">
+			<column name="CELULAR" length="10" not-null="false" />
+		</property>
+	</class>
+</hibernate-mapping>

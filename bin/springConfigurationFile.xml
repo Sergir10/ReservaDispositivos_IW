@@ -78,5 +78,6 @@
 		<property name="daoDispositivo" ref="DispositivoDAO"></property>
 		<property name="daoUsuario" ref="UsuarioDAO"></property>
 	</bean>
-
+	
+	<context:component-scan base-package="co.edu.udea.rd.web"></context:component-scan>
 </beans>
