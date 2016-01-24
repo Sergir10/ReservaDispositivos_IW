@@ -15,8 +15,24 @@ import co.edu.udea.rd.dto.Rol;
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
-public class RolDAOImpl extends HibernateDaoSupport implements RolDAO{
+/**
+ * Clase encargada de implementar los metodos que se definieron en la interface
+ * RolDAO.
+ * 
+ * @author sergir10
+ *
+ */
+public class RolDAOImpl extends HibernateDaoSupport implements RolDAO {
 
+	/**
+	 * Metodo listarRoles() es el encargado de traernos todos los roles
+	 * almacenados en la BD
+	 * 
+	 * @param no
+	 *            tiene
+	 * @return lista con todos los roles.
+	 * @throws MyException
+	 */
 	@Override
 	public List<Rol> listarRoles() throws MyException {
 		List<Rol> roles = new ArrayList<Rol>();
@@ -40,6 +56,14 @@ public class RolDAOImpl extends HibernateDaoSupport implements RolDAO{
 		return roles;
 	}
 
+	/**
+	 * Metodo obteneRol(int idRol) es el encargado de buscar un rol especifico
+	 * en la BD.
+	 * 
+	 * @param idRol por el cual se realizará la búsqueda.
+	 * @return Rol obtenido de la busqueda.
+	 * @throws MyException
+	 */
 	@Override
 	public Rol obtenerRol(int idRol) throws MyException {
 		Rol rol = new Rol();

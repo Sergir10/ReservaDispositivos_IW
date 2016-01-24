@@ -10,8 +10,23 @@ import co.edu.udea.rd.dao.UsuarioDAO;
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
+/**
+ * Clase encargada de implementar los metodos que se definieron en la interface
+ * UsuarioDAO
+ * 
+ * @author sergir10
+ *
+ */
 public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 
+	/**
+	 * Metodo crearUsuario(Usuario usuario) es el encargado de crear un nuevo
+	 * usuario y almacenarlo en la BD.
+	 * 
+	 * @param usuario
+	 *            a almacenar en la base de datos.
+	 * @throws MyException
+	 */
 	@Override
 	public void crearUsuario(Usuario usuario) throws MyException {
 		Session session = null;
@@ -33,6 +48,14 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 		}
 	}
 
+	/**
+	 * Metodo modificarUsuario(Usuario usuario) es el encargado de permitir
+	 * modificar un usuario almacenado en la base de datos
+	 * 
+	 * @param usuario
+	 *            a modificar.
+	 * @throws MyException
+	 */
 	@Override
 	public void modificarUsuario(Usuario usuario) throws MyException {
 		Session session = null;
@@ -55,6 +78,14 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 
 	}
 
+	/**
+	 * Metodo eliminar(Usuario usuario) es el encargado de permitir eliminar a
+	 * un usuario de la BD.
+	 * 
+	 * @param usuario
+	 *            a eliminar.
+	 * @throws MyException
+	 */
 	@Override
 	public void eliminar(Usuario usuario) throws MyException {
 		Session session = null;
@@ -77,6 +108,14 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 
 	}
 
+	/**
+	 * Metodo obtenerUsuario(String username) es el encargado de obtener un
+	 * usuario especifico en la BD por medio del parametro ingresado
+	 * 
+	 * @param username para realizar la busqueda.
+	 * @return Usuario buscado.
+	 * @throws MyException
+	 */
 	@Override
 	public Usuario obtenerUsuario(String username) throws MyException {
 		Usuario usuario = new Usuario();

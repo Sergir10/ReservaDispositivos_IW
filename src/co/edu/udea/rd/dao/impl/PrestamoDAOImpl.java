@@ -21,8 +21,22 @@ import co.edu.udea.rd.dto.PrestamoId;
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
+/**
+ * Clase encargada de implementar los metodos que se definieron en la interface
+ * PrestamoDao.
+ * 
+ * @author sergir10
+ *
+ */
 public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO {
 
+	/**
+	 * Metodo listarPrestamos() sera el encargado de retornar la lista de
+	 * prestamos que se encuentren presentes en la base de datos.
+	 * 
+	 * @return lista de prestamos.
+	 * @throws MyException
+	 */
 	@Override
 	public List<Prestamo> listarPrestamos() throws MyException {
 		List<Prestamo> prestamo = new ArrayList<Prestamo>();
@@ -46,6 +60,15 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 		return prestamo;
 	}
 
+	/**
+	 * Metodo obtenerPrestamo(PrestamoId prestamoId) es el encargado de obtener
+	 * un prestamo de la base de datos buscandolo por prestmaoiD
+	 * 
+	 * @param prestamoId
+	 *            para buscar el prestamo
+	 * @return Prestamo buscado.
+	 * @throws MyException
+	 */
 	@Override
 	public Prestamo obtenerPrestamo(PrestamoId prestamoId) throws MyException {
 		Prestamo prestamo = new Prestamo();
@@ -70,6 +93,14 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 		return prestamo;
 	}
 
+	/**
+	 * Metodo crearPrestamo(Prestamo prestamo) es el encargado de crear un
+	 * prestamo nuevo y agregarlo a la base de datos.
+	 * 
+	 * @param prestamo
+	 *            a crear
+	 * @throws MyException
+	 */
 	@Override
 	public void crearPrestamo(Prestamo prestamo) throws MyException {
 		Session session = null;
@@ -91,6 +122,14 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 		}
 	}
 
+	/**
+	 * Metodo modificarPrestamo(Prestamo prestamo) es el encargado de
+	 * permitirnos modificar un prestamo previamente ingresado en nuestra BD
+	 * 
+	 * @param prestamo
+	 *            a modificar.
+	 * @throws MyException
+	 */
 	@Override
 	public void modificarPrestamo(Prestamo prestamo) throws MyException {
 		Session session = null;
@@ -113,6 +152,14 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 
 	}
 
+	/**
+	 * Metodo eliminarPrestamo(Prestamo prestamo) sirve para eliminar un
+	 * prestamo existente en la BD
+	 * 
+	 * @param prestamo
+	 *            a eliminar.
+	 * @throws MyException
+	 */
 	@Override
 	public void eliminarPrestamo(Prestamo prestamo) throws MyException {
 		Session session = null;
@@ -135,6 +182,16 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 
 	}
 
+	/**
+	 * Metodo validarDisponibilidadPrestamo(Prestamo prestamo) es el encargado
+	 * de verificar en el sistema que la solicitud de prestamo que esta
+	 * procesando un cliente este disponible, es decir el dispositivo se
+	 * encuentre en disponibilidad para el prestamo.
+	 * 
+	 * @param prestamo a verificar disponibilidad
+	 * @return boolean con true si esta disponible o false en caso contrario.
+	 * @throws MyException
+	 */
 	@Override
 	public Boolean validarDisponibilidadPrestamo(Prestamo prestamo) throws MyException {
 
@@ -183,7 +240,7 @@ public class PrestamoDAOImpl extends HibernateDaoSupport implements PrestamoDAO 
 			}
 
 			// Consultamos que el dipositivo solicitado pertenezca a esta lista,
-			// es decir, que esté disponible
+			// es decir, que estï¿½ disponible
 
 			for (int i = 0; i < dispositivosDisponibles.size(); i++) {
 				Dispositivo d = (Dispositivo) prestamo.getPrestamoId().getDispositivo();
