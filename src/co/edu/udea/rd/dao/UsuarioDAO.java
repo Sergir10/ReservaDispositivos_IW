@@ -1,5 +1,7 @@
 package co.edu.udea.rd.dao;
 
+import java.util.List;
+
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
@@ -39,4 +41,7 @@ public interface UsuarioDAO {
 	 * @throws MyException
 	 */
 	public Usuario obtenerUsuario(String username) throws MyException;
+	
+	public List<Usuario> listarUsuarios() throws MyException;
+	
 }

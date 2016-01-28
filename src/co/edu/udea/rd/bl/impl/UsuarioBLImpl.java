@@ -1,8 +1,13 @@
 package co.edu.udea.rd.bl.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import co.edu.udea.rd.bl.UsuarioBL;
 import co.edu.udea.rd.dao.RolDAO;
 import co.edu.udea.rd.dao.UsuarioDAO;
+import co.edu.udea.rd.dto.Dispositivo;
 import co.edu.udea.rd.dto.Rol;
 import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
@@ -234,6 +239,15 @@ public class UsuarioBLImpl implements UsuarioBL {
 
 	public void setDaoRol(RolDAO daoRol) {
 		this.daoRol = daoRol;
+	}
+
+	@Override
+	public List<Usuario> listarUsuarios() throws MyException {
+		List<Usuario> usuarios = new ArrayList();
+		usuarios = daoUsuario.listarUsuarios();
+				
+		return usuarios;
+
 	}
 
 }

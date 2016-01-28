@@ -1,5 +1,8 @@
 package co.edu.udea.rd.bl;
 
+import java.util.List;
+
+import co.edu.udea.rd.dto.Usuario;
 import co.edu.udea.rd.exception.MyException;
 
 /**
@@ -63,6 +66,7 @@ public interface UsuarioBL {
 	 */
 	public boolean loginUsuario(String username, String password) throws MyException;
 
+	public List<Usuario> listarUsuarios() throws MyException;
 }
 
 

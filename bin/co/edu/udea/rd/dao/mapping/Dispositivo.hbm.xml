@@ -9,7 +9,7 @@
 			<generator class="assigned" />
 		</id>
 		<many-to-one name="tipoDispositivo" class="co.edu.udea.rd.dto.TipoDispositivo"
-			fetch="select" lazy="proxy">
+			fetch="select" lazy="false">
 			<column name="TIPODISPOSITIVO" precision="11" scale="0"
 				not-null="true" />
 		</many-to-one>

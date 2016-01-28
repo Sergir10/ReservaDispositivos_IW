@@ -27,7 +27,7 @@
 			<column name="CORREO" length="45" not-null="true" />
 		</property>
 		<many-to-one name="rol" class="co.edu.udea.rd.dto.Rol"
-			fetch="select" lazy="proxy">
+			fetch="select" lazy="false">
 			<column name="ROL" precision="11" scale="0" not-null="true" />
 		</many-to-one>
 		<property name="telefono" type="java.lang.String">
