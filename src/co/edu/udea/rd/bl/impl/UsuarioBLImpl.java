@@ -130,7 +130,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 			String nombre, String apellido, String correo, String telefono, String celular) throws MyException {
 		Usuario usuario = null;
 		Cifrar cifrar = new Cifrar();
-		
+
 		// Se validan que los campos obligatorios no sean vacios o nulos.
 
 		if ((username == null) || "".equals(username)) {
@@ -194,30 +194,30 @@ public class UsuarioBLImpl implements UsuarioBL {
 
 		daoUsuario.modificarUsuario(usuario);
 	}
-	
+
 	@Override
-	public boolean loginUsuario(String username, String password) throws MyException {
+	public String loginUsuario(String username, String password) throws MyException {
 		Usuario usuario;
 		Cifrar cifrar = new Cifrar();
-		
+
 		// Verificamos que el nombre de usuario no sea null o vacio.
 		if ((username == null) || "".equals(username)) {
-			throw new MyException("Usuario no válido", null);
+			throw new MyException("", null);
 		}
-		
+
 		// Verificamos que el usuario exista en la base de datos.
 		usuario = daoUsuario.obtenerUsuario(username);
 		if (usuario == null) {
-			return false;
+			return "";
 		}
-		
-		// Verificamos que la contraseña coincida con la almacenada en la base de datos.
+
+		// Verificamos que la contraseña coincida con la almacenada en la base
+		// de datos.
 		if (!cifrar.encrypt(password).equals(usuario.getPassword())) {
-			return false;
+			return "";
 		}
-		return true;				
+		return usuario.getRol().getIdRol() + "";
 	}
-	
 
 	/*
 	 * 
@@ -245,7 +245,7 @@ public class UsuarioBLImpl implements UsuarioBL {
 	public List<Usuario> listarUsuarios() throws MyException {
 		List<Usuario> usuarios = new ArrayList();
 		usuarios = daoUsuario.listarUsuarios();
-				
+
 		return usuarios;
 
 	}

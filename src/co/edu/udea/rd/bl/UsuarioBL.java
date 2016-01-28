@@ -64,7 +64,7 @@ public interface UsuarioBL {
 	 * @return -> Retorna true si el usuario está registrado en el sistema o false de lo contrario.
 	 * @throws MyException
 	 */
-	public boolean loginUsuario(String username, String password) throws MyException;
+	public String loginUsuario(String username, String password) throws MyException;
 
 	public List<Usuario> listarUsuarios() throws MyException;
 }

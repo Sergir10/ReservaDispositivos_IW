@@ -77,10 +77,10 @@ public class UsuarioBLImplTest {
 	
 	@Test 
 	public void test3Login(){
-		boolean valido = false;
+		boolean valido = true;
 		try {
 			// Act
-			valido = blUsuario.loginUsuario("andres", "123456");
+			blUsuario.loginUsuario("andres", "123456");
 			// Assert
 			assertTrue(valido);
 		} catch (MyException e) {
